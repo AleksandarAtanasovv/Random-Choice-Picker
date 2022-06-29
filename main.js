@@ -35,15 +35,17 @@ function randomPick(){
 
    const interval = setInterval(() => {
         const randomTag = pickRandomTag()
-        choiceDisplay.innerText = randomTag.innerText;
-        console.log(randomTag);
-
+        
 
         highlightTag(randomTag);
-
+        if(tagsElement.classList === "highlight"){
+            const text = tagsElement.innerHTML;
+            console.log(text);
+        }
 
         setTimeout(() => {
             unHighlightTag(randomTag);
+            choiceDisplay.innerText = randomTag.innerText
         }, 100);
    }, 100);
 
@@ -59,7 +61,6 @@ function randomPick(){
             highlightTag(randomTag)
         }, 100);
    }, times * 100);
-   return randomTag;
 
 }
 function pickRandomTag(){
