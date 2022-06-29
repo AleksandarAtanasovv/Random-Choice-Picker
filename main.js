@@ -10,15 +10,16 @@ textareaElement.addEventListener('keyup', (e) =>{
 })
 
 function createTags(input){
-    const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim())
+    const tags = input.split(' ').filter(tag => tag.trim() !== '').map(tag => tag.trim())
     
-    tagsElement.innerHTML = '';
+    tagsElement.innerText = '';
 
 
     tags.forEach(tag => {
         const tagEl = document.createElement('span')
         tagEl.classList.add('tag');
         tagEl.innerText = tag
+        tagsElement.appendChild(tagEl)
     })
 
 }
