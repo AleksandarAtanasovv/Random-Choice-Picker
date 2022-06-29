@@ -44,15 +44,15 @@ textarea{
     background-color: blueviolet;
 }
 .picked{
+    display: none;
+}
+.picked.visible{
     background-color: red;
     color: white;
-    border-radius: 50px;
+    border-radius: 70px;
     padding: 10px 20px;
     margin: 0 5px 10px 0;
-    font-size: 14px;
-    position: fixed;
-    top: 300px;
-    right: 600px;
-    width: 100px;
-    text-align: center;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
 }

@@ -18,7 +18,7 @@ textareaElement.addEventListener('keyup', (e) =>{
 
 function createTags(input){
     const tags = input.split(' ').filter(tag => tag.trim() !== '').map(tag => tag.trim())
-    
+    choiceDisplay.classList.remove('visible')
     tagsElement.innerText = '';
 
 
@@ -31,18 +31,18 @@ function createTags(input){
 
 }
 function randomPick(){
-   const times = 30;
+   const times = 20;
 
    const interval = setInterval(() => {
         const randomTag = pickRandomTag()
         
 
         highlightTag(randomTag);
-        
 
         setTimeout(() => {
             unHighlightTag(randomTag);
-            choiceDisplay.innerText = randomTag.innerText
+            choiceDisplay.innerText = randomTag.textContent
+            
         }, 100);
    }, 100);
 
@@ -52,10 +52,9 @@ function randomPick(){
         clearInterval(interval)
 
         setTimeout(() => {
-            const randomTag = pickRandomTag();
 
 
-            highlightTag(randomTag)
+           choiceDisplay.classList.add('visible')
         }, 100);
    }, times * 100);
 
