@@ -38,10 +38,7 @@ function randomPick(){
         
 
         highlightTag(randomTag);
-        if(tagsElement.classList === "highlight"){
-            const text = tagsElement.innerHTML;
-            console.log(text);
-        }
+        
 
         setTimeout(() => {
             unHighlightTag(randomTag);
