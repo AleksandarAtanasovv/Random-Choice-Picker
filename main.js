@@ -1,6 +1,6 @@
 const tagsElement = document.getElementById('tags');
 const textareaElement = document.getElementById('textarea');
-
+const choiceDisplay = document.getElementById('picked');
 
 textareaElement.focus();
 
@@ -31,10 +31,12 @@ function createTags(input){
 
 }
 function randomPick(){
-   const times = 10;
+   const times = 30;
 
    const interval = setInterval(() => {
         const randomTag = pickRandomTag()
+        choiceDisplay.innerText = randomTag.innerText;
+        console.log(randomTag);
 
 
         highlightTag(randomTag);
@@ -57,6 +59,8 @@ function randomPick(){
             highlightTag(randomTag)
         }, 100);
    }, times * 100);
+   return randomTag;
+
 }
 function pickRandomTag(){
     const tags = document.querySelectorAll('.tag');
@@ -68,4 +72,6 @@ function highlightTag(tag){
 }
 function unHighlightTag(tag){
     tag.classList.remove('highlight');
-}
+} 
+
+
